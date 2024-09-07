@@ -1,38 +1,21 @@
-import { View } from "react-native";
-import Dashboard from "@/components/dashboard";
-import { router } from "expo-router";
+import { View, Text } from "react-native";
 
-// This component is platform-specific.
+import DOMComponent from '../components/testComponents';
+import ProductCard from '../components/shop/ProductCard';
+import { withSentryDomOptions } from '../lib/clientSentry';
 
-import * as Notifications from "expo-notifications";
-
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldPlaySound: true,
-    shouldSetBadge: true,
-  }),
-});
 
 export default function Index() {
   return (
     <View style={{ flex: 1 }}>
-      <Dashboard navigate={router.navigate} notify={notify} />
+      <ProductCard product={{
+        id: '1',
+        title: 'Product 1',
+        description: 'Description of product 1',
+        price: 29.99,
+        reviews: [],
+        img: 'https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg',
+      }} />
     </View>
   );
-}
-
-async function notify() {
-  await Notifications.requestPermissionsAsync();
-
-  await Notifications.scheduleNotificationAsync({
-    identifier: "hello",
-    content: {
-      title: "New Order",
-      body: "(from a DOM component 🚀)",
-    },
-    trigger: {
-      seconds: 1,
-    },
-  });
 }

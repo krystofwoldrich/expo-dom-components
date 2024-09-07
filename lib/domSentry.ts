@@ -19,12 +19,13 @@ export function initSentry() {
         const envelope = serializeEnvelope(request);
         if (typeof envelope !== 'string') {
           console.warn('Envelopes with binary content are not supported.');
-          return;
+          return {};
         }
         postMessage({
           type: '__sentry-transport-send',
           envelope,
         })
+        return {};
       },
     }),
 

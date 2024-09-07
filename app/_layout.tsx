@@ -10,8 +10,8 @@ function RootLayout() {
 
   return (
     <Drawer>
-      <Drawer.Screen name="broken-screen" options={{ title: "errors" }} />
-      <Drawer.Screen name="index" options={{ title: "shadcn" }} />
+      <Drawer.Screen name="index" options={{ title: "errors" }} />
+      <Drawer.Screen name="shadcn" options={{ title: "shadcn" }} />
       <Drawer.Screen name="products" options={{ title: "MDX" }} />
     </Drawer>
   );
