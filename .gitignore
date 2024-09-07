@@ -22,4 +22,5 @@ expo-env.d.ts
 /ios
 /android
 .env.local
-dist-embed/
+/dist-embed
+/dist-server

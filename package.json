@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
+    "start:server": "node dist-server/server.js",
+    "build:server": "npx run-p build:expo:server build:node:server",
+    "build:expo:server": "npx expo export -p web",
+    "build:node:server": "npx tsc -p tsconfig.server.json",
     "android": "CUSTOM_RUN=1 expo run:android",
     "ios": "CUSTOM_RUN=1 expo run:ios",
     "web": "expo start --web",
@@ -78,6 +82,10 @@
     "@types/react": "~18.2.45",
     "@types/react-test-renderer": "^18.0.7",
     "autoprefixer": "^10.4.16",
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "npm-run-all2": "^6.2.2",
     "react-test-renderer": "18.2.0",
     "typescript": "~5.3.3"
   },
