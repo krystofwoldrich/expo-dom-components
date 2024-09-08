@@ -1,6 +1,5 @@
 #!/usr/bin/env node
-import { initSentry } from './lib/serverSentry';
-initSentry();
+import './lib/sentry';
 
 const path = require('path');
 const { createRequestHandler } = require('@expo/server/adapter/express');

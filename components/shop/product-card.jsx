@@ -1,10 +1,16 @@
 'use dom';
 
+import { useEffect } from 'react';
 import './products.css';
+import { SERVER_URL } from '@/lib/server';
 
 function ProductCard(props) {
   const product = props.product;
   const stars = props.stars;
+
+  useEffect(() => {
+    fetch(`${SERVER_URL}/product/${product.id}`);
+  });
 
   return (
     <div
@@ -13,7 +19,7 @@ function ProductCard(props) {
           event.target.id !== 'addToCart' &&
           event.target.parentNode.id !== 'addToCart'
         ) {
-          fetch(`SERVER_URL/product/${product.id}`);
+          fetch(`${SERVER_URL}/product/${product.id}`);
         }
       }}
     >

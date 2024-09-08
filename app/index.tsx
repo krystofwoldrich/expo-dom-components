@@ -1,12 +1,14 @@
 import { View } from "react-native";
 
-import DOMComponent from '../components/testComponents';
-import ProductList from '../components/shop/poroduct-list';
-import { withSentryDomOptions } from '../lib/clientSentry';
+import ProductList from '@/components/shop/product-list';
 import { useEffect, useState } from 'react';
-import { devServerURL, SERVER_URL } from '../lib/server';
+import { SERVER_URL } from '@/lib/server';
+import { continueTraceIn } from '@/lib/sentry/continueTrace';
+import * as Sentry from '@sentry/react-native';
 
-export default function EmpowerPlant() {
+const WrappedProductList = continueTraceIn(ProductList);
+
+function EmpowerPlant() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     (async () => {
@@ -16,10 +18,12 @@ export default function EmpowerPlant() {
   }, []);
 
   return (
-    <View style={{ flex: 1 }}>
-      <ProductList
+    <View style={{ flex: 1, backgroundColor: '#fcfcf1' }}>
+      <WrappedProductList
         products={products}
       />
     </View>
   );
 }
+
+export default Sentry.withProfiler(EmpowerPlant);

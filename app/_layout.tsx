@@ -1,10 +1,10 @@
 import { Slot, useNavigationContainerRef } from "expo-router";
 import { Drawer } from "expo-router/drawer";
-import { initClientSentry, reactNavigationIntegration } from '../lib/clientSentry';
+import { reactNavigationIntegration } from '@/lib/sentry/mobile';
 import * as Sentry from '@sentry/react-native';
 import { useEffect } from 'react';
 
-initClientSentry();
+import '@/lib/sentry';
 
 function RootLayout() {
   const ref = useNavigationContainerRef();
@@ -20,8 +20,6 @@ function RootLayout() {
   return (
     <Drawer>
       <Drawer.Screen name="index" options={{ title: "errors" }} />
-      <Drawer.Screen name="shadcn" options={{ title: "shadcn" }} />
-      <Drawer.Screen name="products" options={{ title: "MDX" }} />
     </Drawer>
   );
 }

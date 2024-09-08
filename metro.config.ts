@@ -1,6 +1,5 @@
 if (process?.env?.USE_SENTRY_IN_DEV_SERVER === "true") {
-  const { initSentry } = require('./lib/serverSentry');
-  initSentry();
+  require("./lib/sentry");
 }
 
 const {

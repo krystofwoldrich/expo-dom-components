@@ -1,18 +1,21 @@
 'use dom';
 
+require('@/lib/sentry/dom').init();
+
 import './index.css';
 
-import { initSentry } from '../../lib/domSentry';
 import ProductCard from './product-card';
-
-initSentry();
+import { withActiveProfiler } from '@/lib/sentry/withActiveProfiler';
 
 function ProductList({
-  products
+  products,
+}: {
+  products: any,
+  dom?: import('expo/dom').DOMProps,
 }) {
   return (
     <ul className='products-list'>
-      {products.map((product) => (
+      {products.map((product: any) => (
         <li key={product.id}>
           <ProductCard product={product} />
         </li>
@@ -21,4 +24,4 @@ function ProductList({
   );
 }
 
-export default ProductList;
+export default withActiveProfiler(ProductList);

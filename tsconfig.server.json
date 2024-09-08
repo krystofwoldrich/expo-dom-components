@@ -6,7 +6,12 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist-server"
+    "outDir": "dist-server",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "lib": ["es2015"],
   "files": [
