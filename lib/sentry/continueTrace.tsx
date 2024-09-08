@@ -8,7 +8,7 @@ export function continueTraceIn<T extends {
   dom?: import('expo/dom').DOMProps;
 }>(Wrapped: React.ComponentType<T>) {
   if (!['ios', 'android'].includes(process.env.EXPO_OS || '')) {
-    return Wrapped;
+    return (props: T) => <Wrapped {...props} />;
   }
 
 

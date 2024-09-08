@@ -4,7 +4,7 @@ import { reactNavigationIntegration } from '@/lib/sentry/mobile';
 import * as Sentry from '@sentry/react-native';
 import { useEffect } from 'react';
 
-import '@/lib/sentry';
+import '@/lib/sentry/mobile';
 
 function RootLayout() {
   const ref = useNavigationContainerRef();

@@ -7,7 +7,7 @@
     "start:server": "node dist-server/server.js",
     "build:server": "npx run-p build:expo:server build:node:server",
     "build:expo:server": "npx expo export -p web",
-    "build:node:server": "npx tsc -p tsconfig.server.json",
+    "build:node:server": "bash scripts/build-server.sh",
     "android": "CUSTOM_RUN=1 expo run:android",
     "ios": "CUSTOM_RUN=1 expo run:ios",
     "web": "expo start --web",

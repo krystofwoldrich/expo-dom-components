@@ -1,6 +1,6 @@
 'use dom';
 
-require('@/lib/sentry/dom').init();
+import '@/lib/sentry/dom';
 
 import './index.css';
 
