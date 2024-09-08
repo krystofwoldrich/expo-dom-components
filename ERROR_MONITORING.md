@@ -60,4 +60,9 @@ SENTRY_AUTH_TOKEN=token \
 
 ## Expo API Routes
 
-// TODO:
+`lib/serverSentry.ts` contains `Sentry.init` for Expo API Routes.
+
+### Source Maps upload
+
+```bash
+```

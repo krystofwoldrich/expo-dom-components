@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Product 1",
+    "description": "This is a product",
+    "price": 9.99,
+    "reviews": [],
+    "img": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Product 2",
+    "description": "This is another product",
+    "price": 19.99,
+    "reviews": [],
+    "img": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg"
+  }
+]

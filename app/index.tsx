@@ -1,21 +1,25 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 import DOMComponent from '../components/testComponents';
-import ProductCard from '../components/shop/ProductCard';
+import ProductList from '../components/shop/poroduct-list';
 import { withSentryDomOptions } from '../lib/clientSentry';
+import { useEffect, useState } from 'react';
+import { devServerURL, SERVER_URL } from '../lib/server';
 
+export default function EmpowerPlant() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(`${SERVER_URL}/product-list`);
+      setProducts(await response.json());
+    })();
+  }, []);
 
-export default function Index() {
   return (
     <View style={{ flex: 1 }}>
-      <ProductCard product={{
-        id: '1',
-        title: 'Product 1',
-        description: 'Description of product 1',
-        price: 29.99,
-        reviews: [],
-        img: 'https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg',
-      }} />
+      <ProductList
+        products={products}
+      />
     </View>
   );
 }

@@ -3,7 +3,7 @@
   "main": "./index",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start",
+    "start": "USE_SENTRY_IN_DEV_SERVER=true expo start",
     "start:server": "node dist-server/server.js",
     "build:server": "npx run-p build:expo:server build:node:server",
     "build:expo:server": "npx expo export -p web",
@@ -33,7 +33,7 @@
     "@react-navigation/native": "^6.0.2",
     "@react-three/drei": "9.105.6",
     "@react-three/fiber": "8.16.6",
-    "@sentry/node": "^8.28.0",
+    "@sentry/node": "8.28.0",
     "@sentry/react-native": "6.0.0-beta.0",
     "@tiptap/core": "^2.6.4",
     "@tiptap/react": "^2.6.4",
@@ -74,7 +74,8 @@
     "tailwind-merge": "^2.4.0",
     "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7",
-    "three": "0.164.1"
+    "three": "0.164.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
