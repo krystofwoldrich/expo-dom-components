@@ -19,7 +19,7 @@ export function continueTraceIn<T extends {
 
     const dom = props.dom || {};
     // This won't work with enabled Apple Pay in Expo Dom Components on iOS.
-    dom.injectedJavaScriptBeforeContentLoaded = `var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};e.__SENTRY_CONTINUE_TRACE='${currentTrace}',e.__SENTRY_CONTINUE_SAMPLED=${currentSampled};e.__SENTRY_CONTINUE_SPAN_ID=${activeSpan?.spanContext().spanId}`
+    dom.injectedJavaScriptBeforeContentLoaded = `var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};e.__SENTRY_CONTINUE_TRACE='${currentTrace}',e.__SENTRY_CONTINUE_SAMPLED=${currentSampled};e.__SENTRY_CONTINUE_SPAN_ID='${activeSpan?.spanContext().spanId}';`
       + (dom.injectedJavaScriptBeforeContentLoaded || '');
     return <Wrapped {...props} dom={dom} />;
   };
