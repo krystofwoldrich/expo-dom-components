@@ -1,18 +1,309 @@
 [
   {
-    "id": "1",
-    "title": "Product 1",
-    "description": "This is a product",
-    "price": 9.99,
-    "reviews": [],
-    "img": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg"
+    "id": 3,
+    "title": "Plant Mood",
+    "description": "The mood ring for plants.",
+    "descriptionfull": "This is an example of what you can do with just a few things, a little imagination and a happy dream in your heart. I'm a water fanatic. I love water. There's not a thing in the world wrong with washing your brush. Everybody needs a friend. Here we're limited by the time we have.",
+    "price": 155,
+    "img": "https://storage.googleapis.com/application-monitoring/mood-planter.jpg",
+    "imgcropped": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg",
+    "reviews": [
+      {
+        "id": 1,
+        "productid": 3,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:04:01.739234",
+        "pg_sleep": ""
+      },
+      {
+        "id": 2,
+        "productid": 3,
+        "rating": 4,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:04:26.233562",
+        "pg_sleep": ""
+      },
+      {
+        "id": 3,
+        "productid": 3,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:05:05.060103",
+        "pg_sleep": ""
+      }
+    ]
   },
   {
-    "id": "2",
-    "title": "Product 2",
-    "description": "This is another product",
-    "price": 19.99,
-    "reviews": [],
-    "img": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg"
+    "id": 4,
+    "title": "Botana Voice",
+    "description": "Lets plants speak for themselves.",
+    "descriptionfull": "Now we don't want him to get lonely, so we'll give him a little friend. Let your imagination just wonder around when you're doing these things. Let your imagination be your guide. Nature is so fantastic, enjoy it. Let it make you happy.",
+    "price": 175,
+    "img": "https://storage.googleapis.com/application-monitoring/plant-to-text.jpg",
+    "imgcropped": "https://storage.googleapis.com/application-monitoring/plant-to-text-cropped.jpg",
+    "reviews": [
+      {
+        "id": 4,
+        "productid": 4,
+        "rating": 4,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:12:33.553939",
+        "pg_sleep": ""
+      },
+      {
+        "id": 5,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:12:45.558259",
+        "pg_sleep": ""
+      },
+      {
+        "id": 6,
+        "productid": 4,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:12:50.510322",
+        "pg_sleep": ""
+      },
+      {
+        "id": 13,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:12:43.312186",
+        "pg_sleep": ""
+      },
+      {
+        "id": 14,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:12:54.719873",
+        "pg_sleep": ""
+      },
+      {
+        "id": 15,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:12:57.760686",
+        "pg_sleep": ""
+      },
+      {
+        "id": 16,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:13:00.140407",
+        "pg_sleep": ""
+      },
+      {
+        "id": 17,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:13:00.971730",
+        "pg_sleep": ""
+      },
+      {
+        "id": 18,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:13:01.665798",
+        "pg_sleep": ""
+      },
+      {
+        "id": 19,
+        "productid": 4,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:13:02.278934",
+        "pg_sleep": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Plant Stroller",
+    "description": "Because plant don't have feet.",
+    "descriptionfull": "Look at them little rascals. There are no limits in this world. That easy. Just make a decision and let it go. I was blessed with a very steady hand; and it comes in very handy when you're doing these little delicate things. Take your time. Speed will come later.",
+    "price": 250,
+    "img": "https://storage.googleapis.com/application-monitoring/plant-spider.jpg",
+    "imgcropped": "https://storage.googleapis.com/application-monitoring/plant-spider-cropped.jpg",
+    "reviews": [
+      {
+        "id": 7,
+        "productid": 5,
+        "rating": 3,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:12:55.863029",
+        "pg_sleep": ""
+      },
+      {
+        "id": 8,
+        "productid": 5,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:13:02.064086",
+        "pg_sleep": ""
+      },
+      {
+        "id": 9,
+        "productid": 5,
+        "rating": 1,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:13:07.086163",
+        "pg_sleep": ""
+      },
+      {
+        "id": 20,
+        "productid": 5,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:14:33.534032",
+        "pg_sleep": ""
+      },
+      {
+        "id": 21,
+        "productid": 5,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:14:50.202678",
+        "pg_sleep": ""
+      },
+      {
+        "id": 22,
+        "productid": 5,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:14:51.351695",
+        "pg_sleep": ""
+      },
+      {
+        "id": 23,
+        "productid": 5,
+        "rating": 2,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:14:54.516776",
+        "pg_sleep": ""
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Plant Nodes",
+    "description": "Listen more carefully to your plants.",
+    "descriptionfull": "By now you should be quite happy about what's happening here. Put your feelings into it, your heart, it's your world. Let's get wild today. This is the fun part",
+    "price": 25,
+    "img": "https://storage.googleapis.com/application-monitoring/nodes.png",
+    "imgcropped": "https://storage.googleapis.com/application-monitoring/nodes-cropped.jpg",
+    "reviews": [
+      {
+        "id": 10,
+        "productid": 6,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:13:13.186648",
+        "pg_sleep": ""
+      },
+      {
+        "id": 11,
+        "productid": 6,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:13:22.244425",
+        "pg_sleep": ""
+      },
+      {
+        "id": 12,
+        "productid": 6,
+        "rating": 4,
+        "customerid": null,
+        "description": null,
+        "created": "2021-06-04 00:13:26.898053",
+        "pg_sleep": ""
+      },
+      {
+        "id": 24,
+        "productid": 6,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:15:29.332914",
+        "pg_sleep": ""
+      },
+      {
+        "id": 25,
+        "productid": 6,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2021-07-01 00:15:30.670786",
+        "pg_sleep": ""
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Plant Mood5",
+    "description": "The mood ring for plants.",
+    "descriptionfull": "This is an example of what you can do with just a few things, a little imagination and a happy dream in your heart. I'm a water fanatic. I love water. There's not a thing in the world wrong with washing your brush. Everybody needs a friend. Here we're limited by the time we have.",
+    "price": 155,
+    "img": "https://storage.googleapis.com/application-monitoring/mood-planter.jpg",
+    "imgcropped": "https://storage.googleapis.com/application-monitoring/mood-planter-cropped.jpg",
+    "reviews": [
+      {
+        "id": 26,
+        "productid": 8,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2022-10-04 10:15:30.207862",
+        "pg_sleep": ""
+      },
+      {
+        "id": 27,
+        "productid": 8,
+        "rating": 5,
+        "customerid": null,
+        "description": null,
+        "created": "2022-10-04 10:15:34.928899",
+        "pg_sleep": ""
+      },
+      {
+        "id": 28,
+        "productid": 8,
+        "rating": 4,
+        "customerid": null,
+        "description": null,
+        "created": "2022-10-04 10:15:39.249074",
+        "pg_sleep": ""
+      }
+    ]
   }
 ]
