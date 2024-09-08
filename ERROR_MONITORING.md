@@ -4,6 +4,17 @@ This document describes the basic of error monitoring Expo React DOM Components 
 
 It's recommended to create separate initialization of the Sentry SDK for each environment.
 
+## Build and upload of source maps
+
+```bash
+yarn build
+
+SENTRY_PROJECT=sentry-project-slug \
+SENTRY_ORG=sentry-org-slug \
+SENTRY_AUTH_TOKEN=token \
+  npx sentry-expo-upload-sourcemaps dist
+```
+
 ## Expo React DOM
 
 `lib/domSentry.ts` contains `Sentry.init` for Expo React DOM Components.
@@ -21,9 +32,12 @@ iOS: Xcode -> Products -> (App Package) mdex.app/www.bundle
 Using the following command you can preview the production artifacts.
 
 ```bash
-mkdir -pv dist-embed/ios
-mkdir -pv dist-embed/android
+yarn build:embed
+```
 
+Example of what the build script runs:
+
+```bash
 npx expo export:embed \
   --entry-file ./index.ts \
   --config-cmd './node_modules/react-native/cli.js config' \
@@ -53,9 +67,9 @@ Upload them to Sentry:
 SENTRY_PROJECT=sentry-project-slug \
 SENTRY_ORG=sentry-org-slug \
 SENTRY_AUTH_TOKEN=token \
-  npx sentry-expo-upload-sourcemaps path/to/mdex.app/www.bundle
+  npx sentry-expo-upload-sourcemaps dist
 
-# In the future dist-embed
+# TMP also path/to/mdex.app/www.bundle
 ```
 
 ## Expo API Routes
@@ -64,5 +78,23 @@ SENTRY_AUTH_TOKEN=token \
 
 ### Source Maps upload
 
+In `@expo/cli@0.19.0-canary-20240904-69100c1` the Expo API Routes functions do not have Debug IDs injected automatically. Run `sentry-cli sourcemaps inject` to add the Debug IDs and then upload the source maps.
+
 ```bash
+yarn build:server
+```
+
+Example of what the build script runs:
+
+```bash
+npx expo export -p web
+npx tsc -p tsconfig.server.json
+npx sentry-cli sourcemaps inject dist/runner dist/server
+```
+
+```bash
+SENTRY_PROJECT=sentry-project-slug \
+SENTRY_ORG=sentry-org-slug \
+SENTRY_AUTH_TOKEN=token \
+  npx sentry-expo-upload-sourcemaps dist
 ```

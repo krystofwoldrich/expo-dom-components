@@ -5,7 +5,9 @@
   "scripts": {
     "start": "USE_SENTRY_IN_DEV_SERVER=true expo start",
     "start:server": "node dist-server/server.js",
-    "build:server": "npx run-p build:expo:server build:node:server",
+    "build": "npx run-s build:server build:embed",
+    "build:embed": "bash scripts/build-embed.sh",
+    "build:server": "npx run-s build:expo:server build:node:server",
     "build:expo:server": "npx expo export -p web",
     "build:node:server": "bash scripts/build-server.sh",
     "android": "CUSTOM_RUN=1 expo run:android",
