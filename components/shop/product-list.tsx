@@ -15,6 +15,11 @@ function ProductList({
 }) {
   return (
     <ul className='products-list'>
+      {!products || products.length === 0 && (
+        <button id="refresh-product-list" onClick={() => {}}>
+          <span className="sentry-unmask">Refresh</span>
+        </button>
+      )}
       {products.map((product: any) => (
         <li key={product.id}>
           <ProductCard product={product} />

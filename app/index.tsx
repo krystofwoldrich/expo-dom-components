@@ -19,9 +19,7 @@ function EmpowerPlant() {
 
   return (
     <View style={{ flex: 1, backgroundColor: '#fcfcf1' }}>
-      <WrappedProductList
-        products={products}
-      />
+      {products.length > 0 && <WrappedProductList products={products} />}
     </View>
   );
 }
