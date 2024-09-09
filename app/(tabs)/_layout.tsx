@@ -11,6 +11,18 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="fail"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="success"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
         name="shop"
         options={{
           title: 'Shop',

@@ -6,9 +6,27 @@ import './index.css';
 import './cart.css';
 
 import { withActiveProfiler } from '@/lib/sentry/withActiveProfiler';
+import { SERVER_URL } from '@/lib/server';
+import * as Sentry from '@sentry/react-native';
 
-function Cart({ cart, removeProduct, addProduct }) {
-  console.log('cart', cart);
+function Cart({ cart, removeProduct, addProduct, navigateToSuccess, navigateToFail }) {
+  const onCheckoutClick = async () => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/checkout`, {
+        method: 'POST',
+        body: JSON.stringify(cart),
+      });
+      if (!response.ok) {
+        throw new Error('Failed to checkout');
+      }
+
+      navigateToSuccess();
+    } catch (error) {
+      Sentry.captureException(error);
+      navigateToFail();
+    }
+  };
+
   return (
     <div className="cart-container">
       {cart.items.length > 0 ? (
@@ -55,7 +73,7 @@ function Cart({ cart, removeProduct, addProduct }) {
             <span className="sentry-unmask">Cart Subtotal: $</span>
             {cart.total}.00
           </h3>
-          <button className="sentry-unmask">
+          <button className="sentry-unmask" onClick={onCheckoutClick}>
             Proceed to checkout
           </button>
         </>

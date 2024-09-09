@@ -31,8 +31,11 @@ const taskReducer = (state: typeof initialState, action: {
 } | {
   type: 'REMOVE_ITEM_FROM_CART';
   payload: Item;
+} | {
+  type: 'CLEAR_CART';
+  payload?: undefined;
 }) => {
-  const itemIndex = state.cart.items.findIndex((item) => item.id === action.payload.id);
+  const itemIndex = state.cart.items.findIndex((item) => item.id === action.payload?.id);
 
   switch (action.type) {
     case 'ADD_ITEM_TO_CART':
@@ -66,6 +69,16 @@ const taskReducer = (state: typeof initialState, action: {
           items: newQuantities[action.payload.id] === 0 ? state.cart.items.filter((item) => item.id !== action.payload.id) : state.cart.items,
           quantities: newQuantities,
           total: state.cart.total - action.payload.price,
+        },
+      };
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          items: [],
+          quantities: {},
+          total: 0,
         },
       };
     default:

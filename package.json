@@ -46,6 +46,7 @@
     "@xyflow/react": "^12.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cors": "^2.8.5",
     "emoji-mart": "^5.6.0",
     "expo": "^52.0.0-canary-20240904-69100c1",
     "expo-application": "6.0.0-canary-20240904-69100c1",

@@ -7,9 +7,10 @@ import * as Sentry from '@sentry/react-native';
 
 function ProductCard(props) {
   const product = props.product;
+  const productUrl = `${SERVER_URL}/api/products/${product.id}`;
 
   useEffect(() => {
-    fetch(`${SERVER_URL}/api/products/${product.id}`);
+    fetch(productUrl);
   });
 
   return (
@@ -19,7 +20,7 @@ function ProductCard(props) {
           event.target.id !== 'addToCart' &&
           event.target.parentNode.id !== 'addToCart'
         ) {
-          fetch(`${SERVER_URL}/products/${product.id}`);
+          fetch(productUrl);
         }
       }}
     >

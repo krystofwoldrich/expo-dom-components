@@ -10,7 +10,7 @@ Sentry.init({
     Sentry.reactNativeTracingIntegration(),
     Sentry.httpClientIntegration({
       failedRequestTargets: [/.*?/],
-      failedRequestStatusCodes: [[400, 499], [500, 599]],
+      failedRequestStatusCodes: [[400, 499]],
     }),
     { name: 'DebugSymbolicator' },
     { name: 'Dedupe' },
