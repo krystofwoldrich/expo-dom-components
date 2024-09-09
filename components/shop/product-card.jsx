@@ -6,7 +6,6 @@ import { SERVER_URL } from '@/lib/server';
 
 function ProductCard(props) {
   const product = props.product;
-  const stars = props.stars;
 
   useEffect(() => {
     fetch(`${SERVER_URL}/api/products/${product.id}`);
@@ -32,9 +31,6 @@ function ProductCard(props) {
         <span className="sentry-unmask">Add to cart — $</span>
         {product.price}.00
       </button>
-      <p>
-        {stars} ({product.reviews.length})
-      </p>
     </div>
   );
 }

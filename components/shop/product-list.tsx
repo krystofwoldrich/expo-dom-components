@@ -9,8 +9,10 @@ import { withActiveProfiler } from '@/lib/sentry/withActiveProfiler';
 
 function ProductList({
   products,
+  addProduct,
 }: {
   products: any,
+  addProduct?: (product: any) => void,
   dom?: import('expo/dom').DOMProps,
 }) {
   return (
@@ -22,7 +24,7 @@ function ProductList({
       )}
       {products.map((product: any) => (
         <li key={product.id}>
-          <ProductCard product={product} />
+          <ProductCard product={product} addProduct={addProduct} />
         </li>
       ))}
     </ul>

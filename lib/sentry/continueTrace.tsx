@@ -5,15 +5,15 @@ import { uuid4 } from '@sentry/utils'
 /**
  * Continue current RN tracing context in Expo Dom Components.
  */
-export function continueTraceIn<T extends {
-  dom?: import('expo/dom').DOMProps;
-}>(Wrapped: React.ComponentType<T>) {
+export function continueTraceIn<T extends {}>(Wrapped: React.ComponentType<T>) {
   if (!['ios', 'android'].includes(process.env.EXPO_OS || '')) {
     return (props: T) => <Wrapped {...props} />;
   }
 
 
-  return (props: T) => {
+  return (props: T & {
+    dom?: import('expo/dom').DOMProps;
+  }) => {
     const currentTrace = Sentry.getCurrentScope().getPropagationContext().traceId;
     const activeSpan = Sentry.getActiveSpan();
     const currentSampled = activeSpan && Sentry.spanIsSampled(activeSpan);

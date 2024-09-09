@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "mdex",
-    "slug": "mdex",
+    "name": "Sentry Expo Demo Empower",
+    "slug": "sentry-expo-demo-empower",
     "version": "1.0.0",
     "orientation": "default",
     "sdkVersion": "UNVERSIONED",
     "icon": "./assets/images/icon.png",
-    "scheme": "mdex",
+    "scheme": "sentry-expo-demo-empower",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bacon.mdex"
+      "bundleIdentifier": "io.sentry-expo-demo.empower"
     },
     "android": {
       "adaptiveIcon": {
@@ -46,9 +46,6 @@
     "extra": {
       "router": {
         "origin": "http://localhost:3000/"
-      },
-      "eas": {
-        "projectId": "06b3157a-c080-423d-aa6f-7c4fc3346b55"
       }
     }
   }

@@ -11,6 +11,7 @@ Sentry.init({
   tracePropagationTargets: [/.*?/],
   integrations: [
     reactNavigationIntegration,
+    { name: 'Dedupe' },
   ],
   spotlight: !!__DEV__,
 });

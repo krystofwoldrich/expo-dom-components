@@ -1,10 +1,12 @@
 import { Slot, useNavigationContainerRef } from "expo-router";
-import { Drawer } from "expo-router/drawer";
+import { Tabs } from "expo-router/tabs";
+import { Stack } from "expo-router";
 import { reactNavigationIntegration } from '@/lib/sentry/mobile';
 import * as Sentry from '@sentry/react-native';
 import { useEffect } from 'react';
 
 import '@/lib/sentry/mobile';
+import { ShopProvider } from '../lib/shop/ShopContext';
 
 function RootLayout() {
   const ref = useNavigationContainerRef();
@@ -18,9 +20,11 @@ function RootLayout() {
   if (process.env.EXPO_OS === "web") return <Slot />;
 
   return (
-    <Drawer>
-      <Drawer.Screen name="index" options={{ title: "errors" }} />
-    </Drawer>
+    <ShopProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" />
+      </Stack>
+    </ShopProvider>
   );
 }
 
