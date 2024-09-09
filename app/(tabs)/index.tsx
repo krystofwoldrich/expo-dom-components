@@ -1,12 +1,11 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
-import { Redirect } from "expo-router";
-import { useRootNavigation } from "expo-router";
+import { Redirect, useNavigationContainerRef } from "expo-router";
 
 // index.tsx, referring to route /
 
 export default function index() {
-  const navigation = useRootNavigation();
+  const navigation = useNavigationContainerRef();
   const [ready, setReady] = React.useState(false);
 
   React.useEffect(() => {

@@ -7,7 +7,7 @@ import { useShopContext } from '../../../lib/shop/ShopContext';
 
 const WrappedCart = continueTraceIn(Cart);
 
-function EmpowerPlant() {
+function TabView() {
   const { state, dispatch } = useShopContext();
 
   return (
@@ -25,4 +25,4 @@ function EmpowerPlant() {
   );
 }
 
-export default Sentry.withProfiler(EmpowerPlant);
+export default Sentry.withProfiler(TabView);
