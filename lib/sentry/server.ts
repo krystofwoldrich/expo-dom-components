@@ -9,8 +9,12 @@ Sentry.init({
   // We recommend adjusting this value in production
   tracesSampleRate: 1.0,
   environment: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-  integrations: [
-    { name: 'Dedupe' },
-  ],
-  //spotlight: true,
+  integrations: (integrations) => {
+    integrations.filter((i) => { i.name !== 'Dedupe' });
+    if (process.env.NODE_ENV === 'production') {
+      integrations.push(Sentry.fsIntegration());
+    }
+    return integrations;
+  },
+  // spotlight: true,
 });

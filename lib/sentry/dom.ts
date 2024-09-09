@@ -7,6 +7,7 @@ Sentry.init({
   autoSessionTracking: false,
   tracePropagationTargets: [/.*?/],
   integrations: [
+    Sentry.reactNativeTracingIntegration(),
     Sentry.httpClientIntegration({
       failedRequestTargets: [/.*?/],
       failedRequestStatusCodes: [[400, 499], [500, 599]],
@@ -14,7 +15,7 @@ Sentry.init({
     { name: 'DebugSymbolicator' },
     { name: 'Dedupe' },
   ],
-  spotlight: !!__DEV__,
+  spotlight: true,
   tracesSampleRate: 1.0,
 });
 

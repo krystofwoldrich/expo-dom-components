@@ -10,7 +10,13 @@ Sentry.init({
   tracesSampleRate: 1.0,
   tracePropagationTargets: [/.*?/],
   integrations: [
+    Sentry.reactNativeTracingIntegration({
+      traceFetch: false,
+    }),
     reactNavigationIntegration,
+    Sentry.appStartIntegration({
+      standalone: true,
+    }),
     { name: 'Dedupe' },
   ],
   spotlight: !!__DEV__,

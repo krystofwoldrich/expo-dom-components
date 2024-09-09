@@ -14,9 +14,11 @@ export function continueTraceIn<T extends {}>(Wrapped: React.ComponentType<T>) {
   return (props: T & {
     dom?: import('expo/dom').DOMProps;
   }) => {
-    const currentTrace = Sentry.getCurrentScope().getPropagationContext().traceId;
     const activeSpan = Sentry.getActiveSpan();
-    const currentSampled = activeSpan && Sentry.spanIsSampled(activeSpan);
+    const currentSampled = !!(activeSpan && Sentry.spanIsSampled(activeSpan));
+    const currentTrace = activeSpan && activeSpan.spanContext().traceId;
+
+    console.log('Passing trace', currentTrace, currentSampled);
 
     const dom = props.dom || {};
     // This won't work with enabled Apple Pay in Expo Dom Components on iOS.
@@ -33,9 +35,13 @@ export function continueTraceFromGlobal() {
   const traceId = (global as any).__SENTRY_CONTINUE_TRACE;
   const sampled = (global as any).__SENTRY_CONTINUE_SAMPLED;
 
-  Sentry.getCurrentScope().setPropagationContext({
-    sampled,
-    traceId,
-    spanId: uuid4().substring(16),
-  });
+  if (typeof traceId === 'string' && typeof sampled === 'boolean') {
+    Sentry.getCurrentScope().setPropagationContext({
+      sampled,
+      traceId,
+      spanId: uuid4().substring(16),
+    });
+    console.log('Picked up trace from global', traceId, sampled);
+  }
+
 }

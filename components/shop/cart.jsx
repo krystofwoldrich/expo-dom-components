@@ -1,7 +1,11 @@
 'use dom';
 
+import '@/lib/sentry/dom';
+
 import './index.css';
 import './cart.css';
+
+import { withActiveProfiler } from '@/lib/sentry/withActiveProfiler';
 
 function Cart({ cart, removeProduct, addProduct }) {
   console.log('cart', cart);
@@ -62,4 +66,6 @@ function Cart({ cart, removeProduct, addProduct }) {
   );
 }
 
-export default Cart;
+Cart.displayName = 'Cart';
+
+export default withActiveProfiler(Cart);

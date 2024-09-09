@@ -31,4 +31,6 @@ function ProductList({
   );
 }
 
+ProductList.displayName = 'ProductList';
+
 export default withActiveProfiler(ProductList);

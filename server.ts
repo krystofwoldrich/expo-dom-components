@@ -3,6 +3,7 @@ process.env.NODE_ENV = 'production';
 
 import './lib/sentry/server';
 
+import * as Sentry from '@sentry/node';
 const path = require('path');
 const { createRequestHandler } = require('@expo/server/adapter/express');
 
@@ -37,6 +38,7 @@ app.all(
 );
 const port = process.env.PORT || 3000;
 
+Sentry.setupExpressErrorHandler(app);
 app.listen(port, () => {
   console.log(`Express server listening on port ${port}`);
 });

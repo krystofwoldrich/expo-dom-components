@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import './products.css';
 import { SERVER_URL } from '@/lib/server';
+import * as Sentry from '@sentry/react-native';
 
 function ProductCard(props) {
   const product = props.product;
@@ -35,4 +36,6 @@ function ProductCard(props) {
   );
 }
 
-export default ProductCard;
+ProductCard.displayName = 'ProductCard';
+
+export default Sentry.withProfiler(ProductCard);
