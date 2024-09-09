@@ -1,7 +1,7 @@
 import fs from 'fs';
 import * as Sentry from '@sentry/node';
 
-const PRODUCT_LIST_PATH = `${__dirname}/../assets/db/product-list.json`;
+const PRODUCT_LIST_PATH = `${__dirname}/../../../assets/db/product-list.json`;
 
 export async function GET(request: Request) {
   try {

@@ -9,7 +9,7 @@ function ProductCard(props) {
   const stars = props.stars;
 
   useEffect(() => {
-    fetch(`${SERVER_URL}/product/${product.id}`);
+    fetch(`${SERVER_URL}/api/products/${product.id}`);
   });
 
   return (
@@ -19,7 +19,7 @@ function ProductCard(props) {
           event.target.id !== 'addToCart' &&
           event.target.parentNode.id !== 'addToCart'
         ) {
-          fetch(`${SERVER_URL}/product/${product.id}`);
+          fetch(`${SERVER_URL}/products/${product.id}`);
         }
       }}
     >

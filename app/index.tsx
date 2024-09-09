@@ -12,7 +12,7 @@ function EmpowerPlant() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     (async () => {
-      const response = await fetch(`${SERVER_URL}/product-list`);
+      const response = await fetch(`${SERVER_URL}/api/products`);
       setProducts(await response.json());
     })();
   }, []);
