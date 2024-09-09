@@ -35,8 +35,8 @@
         "@sentry/react-native/expo",
         {
           "url": "https://sentry.io/",
-          "project": "sentry-react-native",
-          "organization": "sentry-sdks"
+          "project": "react-native",
+          "organization": "sentry-expo-demo"
         }
       ]
     ],

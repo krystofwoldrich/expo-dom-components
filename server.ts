@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+process.env.NODE_ENV = 'production';
+
 import './lib/sentry/server';
 
 const path = require('path');
@@ -17,8 +19,6 @@ app.use(compression());
 
 // http://expressjs.com/en/advanced/best-practice-security.html#at-a-minimum-disable-x-powered-by-header
 app.disable('x-powered-by');
-
-process.env.NODE_ENV = 'production';
 
 app.use(
   express.static(CLIENT_BUILD_DIR, {
