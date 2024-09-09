@@ -14,4 +14,4 @@ export const devServerURL = () => {
   }
 };
 
-export const SERVER_URL = __DEV__ ? devServerURL() : 'http://localhost:3000/';
+export const SERVER_URL = __DEV__ ? devServerURL() : 'http://localhost:3000';
