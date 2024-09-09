@@ -1,8 +1,10 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
+type Item = { id: number; img: string; title: string; price: number };
+
 const initialState: {
   cart: {
-    items: { id: number; img: string; title: string; price: number }[];
+    items: Item[];
     quantities: Record<number, number>;
     total: number;
   };
@@ -25,10 +27,10 @@ const initialState: {
 
 const taskReducer = (state: typeof initialState, action: {
   type: 'ADD_ITEM_TO_CART';
-  payload: any;
+  payload: Item;
 } | {
   type: 'REMOVE_ITEM_FROM_CART';
-  payload: { id: number };
+  payload: Item;
 }) => {
   const itemIndex = state.cart.items.findIndex((item) => item.id === action.payload.id);
 
@@ -63,6 +65,7 @@ const taskReducer = (state: typeof initialState, action: {
           ...state.cart,
           items: newQuantities[action.payload.id] === 0 ? state.cart.items.filter((item) => item.id !== action.payload.id) : state.cart.items,
           quantities: newQuantities,
+          total: state.cart.total - action.payload.price,
         },
       };
     default:
