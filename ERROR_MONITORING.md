@@ -72,6 +72,13 @@ SENTRY_AUTH_TOKEN=token \
 # TMP also path/to/mdex.app/www.bundle
 ```
 
+```bash
+# Auto upload during experimental version
+EXPO_DOM_COMPONENTS_PACKAGE_NAME='www.bundle'
+cd "$PODS_ROOT/../.."
+npx sentry-expo-upload-sourcemaps "${CONFIGURATION_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/${EXPO_DOM_COMPONENTS_PACKAGE_NAME}"
+```
+
 ## Expo API Routes
 
 `lib/serverSentry.ts` contains `Sentry.init` for Expo API Routes.
